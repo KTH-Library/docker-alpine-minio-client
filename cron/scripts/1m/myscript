@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#mc ls minio/test 2> /proc/1/fd/1
+
+echo "Periodically every 1m, listing contents:"
+mc ls minio/test
