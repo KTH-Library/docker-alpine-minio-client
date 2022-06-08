@@ -9,7 +9,7 @@ An example with a `docker-compose.yml` file and two services:
 
 The `Dockerfile` uses a minimal alpine base layer and adds the "minio client" binary. Advantages:
 
-- The "mc" image is much smaller than the stock "minio/mc" image and does not have its entrypoint overridden.
+- The "mc" image is much smaller (36 MB vs 136 MB) than the stock "minio/mc" image and does not have its entrypoint overridden. 
 - Alpine has crond from busybox pre-installed. 
 - Output there is logged so it by default is visible using "docker-compose logs -f mc"
 
@@ -20,6 +20,12 @@ The `Dockerfile` uses a minimal alpine base layer and adds the "minio client" bi
 > How are transfers scheduled periodically?
 
 - The script in ./cron/scripts/1m runs periodically in the "mc" service.
+
+## Using locally
+
+See the Makefile targets for building etc.
+
+To test locally, add hostnames to /etc/hosts (ie console.data.mydomain.org and data.mydomain.org)
 
 ## References
 
